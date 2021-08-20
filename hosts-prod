@@ -1,0 +1,2 @@
+prod-ubuntu ansible_host=52.186.17.79 ansible_connection=ssh ansible_ssh_pass=Mariapaula3012 ansible_user=projasmu
+prod-centos ansible_host=20.38.175.132 ansible_connection=ssh ansible_ssh_pass=Mariapaula3012 ansible_user=projasmu

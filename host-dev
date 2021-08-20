@@ -1,0 +1,2 @@
+dev-ubuntu ansible_host=52.170.62.210 ansible_connection=ssh ansible_ssh_pass=Mariapaula3012 ansible_user=projasmu
+dev-centos ansible_host=40.122.153.222 ansible_connection=ssh ansible_ssh_pass=Mariapaula3012 ansible_user=projasmu
