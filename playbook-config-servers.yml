@@ -1,6 +1,6 @@
 --- 
 - 
+  name: Configuracion de servidores
   host: all
-  name: "Actualizacion de servidores"
-  roles: 
+  roles:
     - config-servers
