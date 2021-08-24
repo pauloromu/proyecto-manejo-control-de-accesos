@@ -1,0 +1,15 @@
+- name: agregando PHP PPA
+  apt:
+          name: software-properties-common
+          state: present
+  become: true
+  when: ansible_os_family == "Debian"
+
+ - name: agregar repositorio PPA
+   ansible.builtin.command: add-apt-repository ppa:ondrej/php -y
+   become: true
+   when: ansible_os_family == "Debian"
+
+ - name: Instalando PHP
+   ansible.builtin.command: apt install
+# tasks file for php
