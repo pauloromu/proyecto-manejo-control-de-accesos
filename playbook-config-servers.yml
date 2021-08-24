@@ -1,5 +1,4 @@
 - name: Actualizacion de servidores
   host: all
   roles:
-          - server-update
-         
+          - config-servers
