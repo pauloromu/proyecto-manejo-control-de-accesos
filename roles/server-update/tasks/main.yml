@@ -1,22 +1,22 @@
--name: Ejecucion del update en Ubuntu
- apt: 
-   update_cache: yes
- become: true
- when: ansible_os_family == "Debian"
-
--name: Actualizar servidores
- apt:
-   name: "*"
-   state: latest
- become: true
- when: ansible_os_family == "Debian"
-
--name: Ejecucion update-upgrade en centos
- yum:
-   name: '*'
-   state: latest
- become: true
- when: ansible_os_family == "RedHat"
-
+--- 
+- 
+  apt: 
+    update_cache: true
+  become: true
+  name: "Ejecucion del update en Ubuntu"
+  when: "ansible_os_family == \"Debian\""
+- 
+  apt: 
+    name: "*"
+    state: latest
+  become: true
+  name: "Actualizar servidores"
+  when: "ansible_os_family == \"Debian\""
+- 
+  become: true
+  name: "*"
+  state: latest
+  when: "ansible_os_family == \"RedHat\""
+  yum: ~
 
 # tasks file for server-update
