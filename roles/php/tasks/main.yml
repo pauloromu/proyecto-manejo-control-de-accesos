@@ -1,5 +1,5 @@
----
-- name: agregando PHP PPA
+- 
+  name: agregando PHP PPA
   apt:
     name: software-properties-common
     state: present

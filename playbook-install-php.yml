@@ -1,6 +1,6 @@
----
-- name: Instalacion PHP
-  host: all
+- 
+  name: Instalacion PHP
+  hosts: all
   roles:
     - php
 

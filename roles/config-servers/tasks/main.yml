@@ -1,4 +1,3 @@
----
 - name: Instalando apache httpd
   apt:
    name: apache2
@@ -8,16 +7,16 @@
 
 - name: Activacion y habilitacion de proteccion con firewall ufw
   ufw:
-    state: enabled
-    policy: allow
+   state: enabled
+   policy: allow
   become: true
   when: ansible_os_family == "Debian"
 
 - name: Agregando puerto 80 a ufw
   ufw:
-    rule: allow
-    port: 80
-    proto: tcp
+   rule: allow
+   port: 80
+   proto: tcp
   become: true
   when: ansible_os_family == "Debian"
 
@@ -28,16 +27,15 @@
 
 - name: Agregando puerto 8080 al firewalld
   firewalld:
-    port: 8080/tcp
-    permanent: yes
-    state: enabled
-    become: true
-    when: ansible_os_family == "RedHat"
+   port: 8080/tcp
+   permanent: yes
+   state: enabled
+   become: true
+   when: ansible_os_family == "RedHat"
 
 - name: Instalar openjdf11
   ansible.builtin.command: yum install java-11-openjdf-devel -y
   become: true
   when: ansible_os_family == "RedHat"
-
 
 # tasks file for config-servers
