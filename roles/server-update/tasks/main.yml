@@ -1,4 +1,3 @@
----
 - name: Ejecucion del update en Ubuntu
   apt:
     update_cache: yes
@@ -14,7 +13,7 @@
 
 - name: Ejecucion update-upgrade en centos
   yum:
-    name: "'*"
+    name: "*"
     state: latest
   become: true
   when: ansible_os_family == "RedHat"
