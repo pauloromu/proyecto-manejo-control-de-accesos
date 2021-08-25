@@ -1,0 +1,6 @@
+---
+- name: Agregar tomcat group
+  group:
+    name: tomcat
+  become: true
+  when: ansible_os_family == "RedHat"

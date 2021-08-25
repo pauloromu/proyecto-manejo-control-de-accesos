@@ -1,0 +1,7 @@
+---
+- name: restart tomcat
+  ansible.builtin.services:
+    name: tomcat
+    state: restarted
+  become: true
+# handlers file for tomcat

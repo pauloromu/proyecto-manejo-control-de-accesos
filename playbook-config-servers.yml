@@ -1,6 +1,5 @@
 --- 
-- 
+- name: configuracion de servidores
   host: all
-  name: "Configuracion de servidores"
   roles:
     - config-servers
