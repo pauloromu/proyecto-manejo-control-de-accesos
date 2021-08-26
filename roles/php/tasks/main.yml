@@ -1,33 +1,32 @@
-- 
-  name: agregando PHP PPA
+- name: agregando PHP PPA
   apt:
-    name: software-properties-common
-    state: present
+   name: software-properties-common
+   state: present
   become: true
   when: ansible_os_family == "Debian"
 
 - name: agregar repositorio PPA
-  ansible.builtin.command: add-apt-repository ppa:ondrej/php -y
+  command: add-apt-repository ppa:ondrej/php -y
   become: true
   when: ansible_os_family == "Debian"
 
 - name: Instalando PHP
-  ansible.builtin.command: apt install php8.0 libapache2-mod-php8.0 -y
+  command: apt install php8.0 libapache2-mod-php8.0 -y
   become: true
   when: ansible_os_family == "Debian"
 
 - name: Reiniciando apache httpd
-  ansible.builtin.service:
+  service:
    name: apache2
    state: restarted
   become: true
   when: ansible_os_family == "Debian"
 
 - name: copiando archivo info.php
-  ansible.builtin.command.copy:
-    src: /home/projasmu/info.php
-    dest: /var/www/html/info.php
-    remote_src: yes
+  command.copy:
+   src: /home/projasmu/info.php
+   dest: /var/www/html/info.php
+   remote_src: yes
   become: true
   when: ansible_os_family == "Debian"
 
